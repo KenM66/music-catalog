@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.catalog.entities.Recording;
@@ -19,11 +20,12 @@ public class RecordingController {
 	public List<Recording> findAllRecordings(){
 		return service.getAllRecordings();
 	}
-	
-	@GetMapping("/other-demo")
-	public String otherDemo() {
-		return "This is the other demo";
+
+	@PostMapping("/api/save-recording")
+	public String saveRecording(Recording recording) {
+		service.addRecording(recording);
+		return recording.toString();
 	}
 
+
 }
-//afdafadsd

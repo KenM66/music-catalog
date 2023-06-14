@@ -17,5 +17,9 @@ public class RecordingService {
 	public List<Recording> getAllRecordings(){
 		return repository.findAll();
 	}
+	
+	public void addRecording(Recording recording) {
+		repository.save(recording);
+	}
 
 }
