@@ -12,5 +12,7 @@ public interface RecordingRepository extends JpaRepository<Recording, Long>{
 	
 	List<Recording> findByTitleContainingIgnoreCase(String title);
 	
+	List<Recording> findByArtistContainingIgnoreCase(String artist);
+	
 
 }

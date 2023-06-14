@@ -31,7 +31,12 @@ public class RecordingController {
 	
 	@GetMapping("api/recordings-by-title/{title}")
 	public List<Recording> findByTitleContaining(@PathVariable String title){
-		return service.getAllRecordingsContainingString(title);
+		return service.getAllRecordingsByTitleContainingString(title);
+	}
+	
+	@GetMapping("api/recordings-by-artist/{artist}")
+	public List<Recording> findByArtistContaining(@PathVariable String artist){
+		return service.getAllRecordingsByArtistContainingString(artist);
 	}
 	
 

@@ -22,8 +22,13 @@ public class RecordingService {
 		repository.save(recording);
 	}
 	
-	public List<Recording> getAllRecordingsContainingString(String title){
+	public List<Recording> getAllRecordingsByTitleContainingString(String title){
 		return repository.findByTitleContainingIgnoreCase(title);
 	}
+	
+	public List<Recording> getAllRecordingsByArtistContainingString(String artist){
+		return repository.findByArtistContainingIgnoreCase(artist);
+	}
+	
 
 }
