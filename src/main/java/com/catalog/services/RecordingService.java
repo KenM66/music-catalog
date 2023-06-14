@@ -30,5 +30,9 @@ public class RecordingService {
 		return repository.findByArtistContainingIgnoreCase(artist);
 	}
 	
+	public List<Recording> getAllRecordingsByGenreContainingString(String genre){
+		return repository.findByGenreContainingIgnoreCase(genre);
+	}
+	
 
 }

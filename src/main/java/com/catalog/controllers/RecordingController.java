@@ -29,14 +29,18 @@ public class RecordingController {
 		return recording.toString();
 	}
 	
-	@GetMapping("api/recordings-by-title/{title}")
+	@GetMapping("/api/recordings-by-title/{title}")
 	public List<Recording> findByTitleContaining(@PathVariable String title){
 		return service.getAllRecordingsByTitleContainingString(title);
 	}
 	
-	@GetMapping("api/recordings-by-artist/{artist}")
+	@GetMapping("/api/recordings-by-artist/{artist}")
 	public List<Recording> findByArtistContaining(@PathVariable String artist){
 		return service.getAllRecordingsByArtistContainingString(artist);
+	}
+	@GetMapping("/api/recordings-by-genre/{genre}")
+	public List<Recording> findByGenreContaining(@PathVariable String genre){
+		return service.getAllRecordingsByGenreContainingString(genre);
 	}
 	
 
