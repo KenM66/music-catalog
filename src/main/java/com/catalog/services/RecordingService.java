@@ -21,5 +21,9 @@ public class RecordingService {
 	public void addRecording(Recording recording) {
 		repository.save(recording);
 	}
+	
+	public List<Recording> getAllRecordingsContainingString(String title){
+		return repository.findByTitleContainingIgnoreCase(title);
+	}
 
 }
