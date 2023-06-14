@@ -9,7 +9,7 @@ public class CatalogController {
 	
 	@GetMapping("/demo-string")
 	public String demo(){
-		return "This is the demo";
+		return "Hello Ken's Facebook Friends";
 	}
 
 }
