@@ -3,6 +3,7 @@ package com.catalog.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +14,7 @@ import com.catalog.entities.Recording;
 import com.catalog.services.RecordingService;
 
 @RestController
+@CrossOrigin("*")
 public class RecordingController {
 	
 	@Autowired 
