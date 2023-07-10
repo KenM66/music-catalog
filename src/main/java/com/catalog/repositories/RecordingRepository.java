@@ -2,6 +2,7 @@ package com.catalog.repositories;
 
 import java.util.List;
 
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,7 +15,10 @@ public interface RecordingRepository extends JpaRepository<Recording, Long>{
 	
 	List<Recording> findByArtistContainingIgnoreCase(String artist);
 	
-	List<Recording> findByGenreContainingIgnoreCase(String genre);
+	List<Recording> findByGenreContainingIgnoreCaseOrSubGenreContainingIgnoreCase(String genre, String subGenre);
+	
+	
+	
 	
 
 }

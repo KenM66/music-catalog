@@ -14,7 +14,7 @@ import com.catalog.entities.Recording;
 import com.catalog.services.RecordingService;
 
 @RestController
-@CrossOrigin("*")//Test
+@CrossOrigin("*")
 public class RecordingController {
 	
 	@Autowired 

@@ -31,7 +31,7 @@ public class RecordingService {
 	}
 	
 	public List<Recording> getAllRecordingsByGenreContainingString(String genre){
-		return repository.findByGenreContainingIgnoreCase(genre);
+		return repository.findByGenreContainingIgnoreCaseOrSubGenreContainingIgnoreCase(genre, genre);
 	}
 	
 
