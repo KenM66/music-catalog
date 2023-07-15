@@ -1,5 +1,6 @@
 package com.catalog.controllers;
 
+import com.catalog.entities.ConfirmationMessage;
 import com.catalog.entities.SongRequest;
 import com.catalog.services.EmailService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -23,11 +24,13 @@ public class CatalogController {
 
 	@PostMapping("/send-message")
 	public String sendMessage(@RequestBody SongRequest request) throws JsonProcessingException {
-
-
-
-
-		service.sendRequestEmail(request);
-		return mapper.writeValueAsString("Your song request has been sent to Ken Milota!");
+		return mapper.writeValueAsString(service.sendRequestEmail(request));
 	}
+
+	@PostMapping("/confirm-receipt")
+	public String sendConfirmation(@RequestBody ConfirmationMessage message) throws JsonProcessingException {
+		return mapper.writeValueAsString(service.sendConfirmationMessage(message));
+	}
+
+
 }

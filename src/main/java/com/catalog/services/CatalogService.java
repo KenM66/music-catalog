@@ -1,5 +1,6 @@
 package com.catalog.services;
 
+import com.catalog.entities.ConfirmationMessage;
 import com.catalog.entities.SongRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -40,6 +41,27 @@ public class CatalogService implements EmailService{
             return "Error sending email";
         }
 
-        return null;
+        return "Your message was sent to Ken Milota";
     }
+
+    @Override
+    public String sendConfirmationMessage(ConfirmationMessage message) {
+
+        try{
+            SimpleMailMessage mailMessage= new SimpleMailMessage();
+
+            mailMessage.setFrom(sender);
+            mailMessage.setTo(message.getEmail());
+            mailMessage.setText(message.getMessage());
+
+            javaMailSender.send(mailMessage);
+        }
+        catch (Exception e){
+            return "Confirmation email was not sent";
+        }
+
+        return "Confirmation e-mail sent to viewer";
+    }
+
+
 }
