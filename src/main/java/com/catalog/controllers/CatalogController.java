@@ -22,12 +22,12 @@ public class CatalogController {
 	}
 
 	@PostMapping("/send-message")
-	public void sendMessage(@RequestBody SongRequest request) throws JsonProcessingException {
+	public String sendMessage(@RequestBody SongRequest request) throws JsonProcessingException {
 
-		System.out.println(request.getMessage());
+
 
 
 		service.sendRequestEmail(request);
-
+		return mapper.writeValueAsString("Your song request has been sent to Ken Milota!");
 	}
 }
